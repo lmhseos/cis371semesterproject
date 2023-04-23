@@ -1,6 +1,5 @@
 //import { collection } from 'firebase/firestore';
 import React, {useState, useEffect} from 'react';
-import { AiOutlinePlus } from 'react-icons/ai';
 import { Story } from './Story';
 import { db } from './firebase';
 import { collection, query, onSnapshot, updateDoc, doc, addDoc, deleteDoc, } from 'firebase/firestore';
@@ -8,8 +7,8 @@ import { collection, query, onSnapshot, updateDoc, doc, addDoc, deleteDoc, } fro
 
 
 const style = {
-  bg: `h-screen w-screen p-4 bg-gradient-to-r from-[#2d388a] to-[#00AEFF]`,
-  container: `bg-slate-700 max-w-[1000px] w-full m-auto rounded-md shadow-xl p-4`,
+  bg: `h-screen w-screen p-4 bg-gradient-to-r from-[#647DEE] to-[#7F53AC]`,
+  container: `bg-slate-700 max-w-[1000px] w-full m-auto shadow-xl p-4`,
   heading: `text-5xl font-bold text-center text-white p-2`,
   form: `flex justify-between`,
   name: `border p-2 max-w-[200] text-xl `,
@@ -86,7 +85,7 @@ async function deleteStoryById(storyId) {
       <input value={priority} onChange={(e) => setPriority(e.target.value)} className={style.priority} type="text" placeholder='Priority'/>
       <input value={descrip} onChange={(e) => setDescrip(e.target.value)} className={style.description} type="text" placeholder='Description'/>
       
-      <button className={style.addbutton} type="submit"><AiOutlinePlus size={30}/></button>
+      <button className={style.addbutton} type="submit" size={30}> Add </button>
       </form>
       <ul>
         {stories.map((story, index) => (
